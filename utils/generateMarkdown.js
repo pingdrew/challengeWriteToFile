@@ -3,6 +3,7 @@ const index = require('../index');
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
+  //simple switch case that returns different license strings to plug into readme depending on which you chose
   switch(license) {
     case 'MIT':
       license = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
@@ -21,11 +22,13 @@ function renderLicenseLink(license) {
     break;
     default: '';
   }    
+  // if nothing was chosen, return empty string, otherwise return whatever license is set to
   return license;
 };
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  //simply gets the variables and format where it needs to be
   return `# ${data.title}
   ## DESCRIPTION 
   ${data.description}
@@ -51,4 +54,5 @@ function generateMarkdown(data) {
 `;
 }
 
+//allows index.js to see this file
 module.exports = generateMarkdown;
